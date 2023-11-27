@@ -34,18 +34,4 @@ services:
     env_file:
       - ./.envs/.local/.postgres
 
-  docs:
-    image: fcd_local_docs
-    container_name: fcd_local_docs
-    build:
-      context: .
-      dockerfile: ./compose/local/docs/Dockerfile
-    env_file:
-      - ./.envs/.local/.django
-    volumes:
-      - ./docs:/docs:z
-      - ./config:/app/config:z
-      - ./fcd:/app/fcd:z
-    ports:
-      - '9000:9000'
-    command: /start-docs
+
